@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="referrer" content="no-referrer">
     <meta name="color-scheme" content="light dark">
-    <title>Sign in</title>
+    <title>登录</title>
     <link rel="stylesheet" href="/ui-HASH.css">
     <script src="/ui-HASH.js"></script>
     <style>
@@ -138,7 +138,7 @@
 </head>
 
 <body data-page="login">
-    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换主题">
         <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
@@ -156,9 +156,9 @@
         <div class="head">
             <div class="app-header">
                 <div class="app-tile" id="app-tile" hidden></div>
-                <h1 class="page-title" id="title">Sign in</h1>
+                <h1 class="page-title" id="title">登录</h1>
             </div>
-            <p class="lead" id="subtitle">Enter your credentials to continue</p>
+            <p class="lead" id="subtitle">请输入您的账号信息以继续</p>
         </div>
 
         <div class="alert" id="alert" role="alert" hidden>
@@ -173,26 +173,26 @@
 
         <form class="fields" id="login-form" novalidate>
             <div id="field-username">
-                <label class="label" for="username">Username</label>
+                <label class="label" for="username">用户名</label>
                 <input class="input" id="username" name="username" type="text" placeholder="you@example.com"
                     autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required>
             </div>
             <div id="field-password">
-                <label class="label" for="password">Password</label>
+                <label class="label" for="password">密码</label>
                 <input class="input" id="password" name="password" type="password" placeholder="••••••••"
                     autocomplete="current-password" required>
             </div>
             <div id="field-device-code" hidden>
-                <label class="label" for="device-code">Device code</label>
+                <label class="label" for="device-code">设备代码</label>
                 <input class="input" id="device-code" name="device-code" type="text" placeholder="XXXX-XXXX"
                     autocomplete="off" autocapitalize="characters" spellcheck="false">
             </div>
             <div id="field-otp" hidden>
-                <label class="label" for="otp">One-time code</label>
+                <label class="label" for="otp">一次性验证码</label>
                 <input class="input" id="otp" name="otp" type="text" placeholder="000000" maxlength="6"
                     inputmode="numeric" pattern="\d{6}" autocomplete="one-time-code">
             </div>
-            <button type="submit" class="btn" id="submit-btn">Sign in</button>
+            <button type="submit" class="btn" id="submit-btn">登录</button>
         </form>
 
         <div class="stack" id="consent" hidden>
@@ -201,17 +201,17 @@
                 <div class="client-info">
                     <div class="client-name" id="client-name"></div>
                     <div class="client-host" id="client-host" hidden></div>
-                    <span class="chip" id="client-unverified" hidden>Unverified application</span>
+                    <span class="chip" id="client-unverified" hidden>未经验证的应用</span>
                 </div>
             </div>
             <div>
-                <p class="section-title">If you allow it, this application will be able to</p>
+                <p class="section-title">如果您允许，此应用将能够</p>
                 <ul class="scopes" id="client-scopes"></ul>
             </div>
             <p class="redirect-note" id="client-redirect" hidden></p>
             <div class="actions">
-                <button type="button" class="btn secondary" id="deny-btn">Deny</button>
-                <button type="button" class="btn" id="allow-btn">Allow</button>
+                <button type="button" class="btn secondary" id="deny-btn">拒绝</button>
+                <button type="button" class="btn" id="allow-btn">允许</button>
             </div>
         </div>
     </main>

@@ -4,6 +4,7 @@
     var KEY = 'stalwart-ui';
     var root = document.documentElement;
     var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    var UI_LOCALE = 'zh-CN';
 
     var LOGO = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="95 84 500 90" role="img" aria-label="Stalwart">'
         + '<path class="wordmark" d="M227.8 143.6c.3 4.2 2.1 7.6 5.1 10.1 3.1 2.5 7.1 3.8 12.1 3.8 4.3 0 7.9-.9 10.5-2.8 2.7-1.9 4-4.5 4-7.8 0-2.4-.7-4.3-2.2-5.7-1.5-1.4-3.4-2.5-6-3.2-2.5-.7-6-1.5-10.6-2.3-4.6-.8-8.6-1.9-11.9-3.2-3.3-1.3-6-3.3-8.1-6.1-2.1-2.7-3.1-6.3-3.1-10.7 0-4.1 1.1-7.7 3.2-10.9s5.1-5.7 9-7.4c3.8-1.8 8.2-2.6 13.2-2.6 5.1 0 9.6 1 13.7 2.9 4 1.9 7.2 4.5 9.5 7.8s3.6 7.1 3.8 11.4h-11.5c-.4-3.7-2-6.6-4.8-8.9-2.8-2.2-6.3-3.4-10.6-3.4-4.1 0-7.5.9-9.9 2.7-2.5 1.8-3.7 4.3-3.7 7.6 0 2.3.7 4.1 2.2 5.5 1.5 1.4 3.4 2.4 5.9 3.1 2.4.7 5.9 1.4 10.5 2.2 4.6.8 8.6 1.9 11.9 3.3 3.3 1.4 6 3.4 8.2 6 2.1 2.6 3.2 6.1 3.2 10.5 0 4.2-1.1 8-3.4 11.3-2.2 3.3-5.4 5.9-9.4 7.8-4 1.9-8.6 2.8-13.7 2.8-5.6 0-10.6-1-14.9-3.1-4.3-2-7.6-4.9-10-8.5-2.4-3.6-3.7-7.8-3.7-12.5l11.5.3zM278.5 102.1l11-2.1v14.6h12.6v9.7h-12.6v27.2c0 2 .4 3.5 1.2 4.3.8.9 2.2 1.3 4.2 1.3h8.4v9.7h-10.6c-5 0-8.6-1.2-10.8-3.5-2.2-2.3-3.4-5.9-3.4-10.7v-50.5zM356.8 114.6v52.2h-9.7l-1.2-7.9c-1.8 2.6-4.2 4.7-7 6.2-2.9 1.6-6.2 2.3-10 2.3-4.8 0-9-1.1-12.7-3.2-3.7-2.1-6.7-5.2-8.8-9.3-2.1-4-3.2-8.8-3.2-14.2 0-5.3 1.1-10 3.2-14s5.1-7.2 8.8-9.4c3.7-2.2 7.9-3.3 12.6-3.3 3.9 0 7.2.7 10.1 2.2 2.9 1.5 5.2 3.5 6.9 6.1l1.3-7.6h9.7zm-15.1 38.7c2.8-3.2 4.2-7.3 4.2-12.4 0-5.2-1.4-9.4-4.2-12.6-2.8-3.3-6.5-4.9-11-4.9-4.6 0-8.2 1.6-11 4.8-2.8 3.2-4.2 7.4-4.2 12.5 0 5.2 1.4 9.4 4.2 12.6 2.8 3.2 6.5 4.8 11 4.8s8.2-1.6 11-4.8zM365.5 97.5l11-2.1v71.3h-11V97.5zM380.3 114.6h11.6l11.9 39.9 11.9-39.9h10.1l11.4 39.9 12.3-39.9h11.2l-17.3 52.2h-11.8l-11-35.5-11.4 35.5-11.9.1-17-52.3zM513.7 114.6v52.2H504l-1.2-7.9c-1.8 2.6-4.2 4.7-7 6.2-2.9 1.6-6.2 2.3-10 2.3-4.8 0-9-1.1-12.7-3.2-3.7-2.1-6.7-5.2-8.8-9.3-2.1-4-3.2-8.8-3.2-14.2 0-5.3 1.1-10 3.2-14s5.1-7.2 8.8-9.4c3.7-2.2 7.9-3.3 12.6-3.3 3.9 0 7.2.7 10.1 2.2 2.9 1.5 5.2 3.5 6.9 6.1l1.3-7.6h9.7zm-15.1 38.7c2.8-3.2 4.2-7.3 4.2-12.4 0-5.2-1.4-9.4-4.2-12.6-2.8-3.3-6.5-4.9-11-4.9-4.6 0-8.2 1.6-11 4.8-2.8 3.2-4.2 7.4-4.2 12.5 0 5.2 1.4 9.4 4.2 12.6 2.8 3.2 6.5 4.8 11 4.8 4.6 0 8.2-1.6 11-4.8zM551.3 114.6v10.3h-4.9c-4.6 0-7.8 1.5-9.9 4.4-2 3-3.1 6.7-3.1 11.3v26.2h-11v-52.2h9.8l1.2 7.8c1.5-2.4 3.4-4.4 5.8-5.8 2.4-1.4 5.6-2.1 9.6-2.1h2.5zM556.3 102.1l11-2.1v14.6h12.6v9.7h-12.6v27.2c0 2 .4 3.5 1.2 4.3.8.9 2.2 1.3 4.2 1.3h8.4v9.7h-10.6c-5 0-8.6-1.2-10.8-3.5s-3.4-5.9-3.4-10.7v-50.5z"/>'
@@ -49,7 +50,7 @@
     }
 
     function labelToggle(button) {
-        button.setAttribute('aria-label', currentTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        button.setAttribute('aria-label', currentTheme() === 'dark' ? '切换到浅色模式' : '切换到深色模式');
     }
 
     applyTheme(storedTheme());
@@ -73,7 +74,7 @@
                 if (!blob) { showDefault(); return; }
                 var objectUrl = URL.createObjectURL(blob);
                 var img = new Image();
-                img.alt = 'Logo';
+                img.alt = '标志';
                 img.onload = function () { clear(wrap); wrap.appendChild(img); };
                 img.onerror = function () { URL.revokeObjectURL(objectUrl); showDefault(); };
                 img.src = objectUrl;
@@ -82,7 +83,7 @@
     }
 
     function loginPage() {
-            var FAILURE = 'Temporary server failure. If the problem persists, contact your administrator.';
+            var FAILURE = '服务器暂时故障。如果问题持续存在，请联系管理员。';
 
             function showError(msg) {
                 var a = $('alert');
@@ -130,7 +131,7 @@
                 if (typeof location !== 'string' || !location) {
                     showFatal(FAILURE);
                 } else if (!isSafeLocation(location)) {
-                    showFatal('The application redirect address is not allowed.');
+                    showFatal('不允许跳转到该应用地址。');
                 } else {
                     leaving = true;
                     window.location.assign(location);
@@ -141,7 +142,7 @@
                 hide($('login-form'));
                 hide($('consent'));
                 hide($('app-tile'));
-                setText($('title'), 'Unable to continue');
+                setText($('title'), '无法继续');
                 setText($('subtitle'), '');
                 showError(msg);
             }
@@ -179,7 +180,7 @@
             }
 
             function renderConsent(info, onAllow, onDeny) {
-                var name = typeof info.name === 'string' && info.name ? info.name : 'Unnamed application';
+                var name = typeof info.name === 'string' && info.name ? info.name : '未命名应用';
                 setText($('client-name'), name);
                 if (info.verified) hide($('client-unverified')); else show($('client-unverified'));
                 if (typeof info.clientHost === 'string' && info.clientHost) {
@@ -194,7 +195,8 @@
                 var list = $('client-scopes');
                 clear(list);
                 var scopes = Array.isArray(info.scopes) ? info.scopes : [];
-                if (!scopes.length) scopes = ['Confirm that you have an account on this server'];
+                if (!scopes.length) scopes = ['确认您在此服务器上拥有账号'];
+
                 scopes.forEach(function (label) {
                     var li = document.createElement('li');
                     setText(li, label);
@@ -202,7 +204,7 @@
                 });
 
                 if (typeof info.redirectHost === 'string' && info.redirectHost) {
-                    setText($('client-redirect'), 'You will be sent back to ' + info.redirectHost + ' after you sign in.');
+                    setText($('client-redirect'), '登录后您将被送回 ' + info.redirectHost + '。');
                     show($('client-redirect'));
                 } else {
                     hide($('client-redirect'));
@@ -210,10 +212,10 @@
 
                 hide($('login-form'));
                 hide($('app-tile'));
-                setText($('title'), isDevice ? 'Authorize device' : 'Authorize access');
+                setText($('title'), isDevice ? '授权设备' : '授权访问');
                 setText($('subtitle'), isDevice
-                    ? 'A device is requesting access to your account.'
-                    : 'An application is requesting access to your account.');
+                    ? '有设备正在请求访问您的账号。'
+                    : '有应用正在请求访问您的账号。');
                 allowHandler = onAllow;
                 denyHandler = onDeny;
                 stage = 'consent';
@@ -228,20 +230,20 @@
                 show($('field-password'));
                 hide($('field-device-code'));
                 hide($('field-otp'));
-                setText($('submit-btn'), 'Sign in');
+                setText($('submit-btn'), '登录');
                 var name = clientInfo && typeof clientInfo.name === 'string' ? clientInfo.name : '';
                 if (clientInfo && !clientInfo.consentRequired && name) {
-                    setText($('title'), 'Sign in to ' + name);
+                    setText($('title'), '登录到 ' + name);
                     if (isSafeLogo(clientInfo.logo)) {
                         renderTile($('app-tile'), name, clientInfo.logo, name);
                         show($('app-tile'));
                     }
-                    setText($('subtitle'), 'Enter your credentials to continue');
+                    setText($('subtitle'), '请输入您的账号信息以继续');
                 } else {
-                    setText($('title'), 'Sign in');
+                    setText($('title'), '登录');
                     setText($('subtitle'), name
-                        ? 'Enter your credentials to continue to ' + name
-                        : 'Enter your credentials to continue');
+                        ? '请输入您的账号信息以继续前往 ' + name
+                        : '请输入您的账号信息以继续');
                 }
                 show($('login-form'));
                 focusFirst();
@@ -260,8 +262,8 @@
                 hide($('field-username'));
                 hide($('field-password'));
                 show($('field-otp'));
-                setText($('title'), 'Two-factor authentication');
-                setText($('subtitle'), 'Enter the 6-digit code from your authenticator app.');
+                setText($('title'), '双重验证');
+                setText($('subtitle'), '请输入您身份验证器应用中的 6 位验证码。');
                 clearAlert();
                 setTimeout(function () { $('otp').focus(); }, 0);
             }
@@ -339,20 +341,20 @@
                     case 'invalid':
                         showFatal(typeof resp.description === 'string' && resp.description
                             ? resp.description
-                            : 'The sign-in request is invalid.');
+                            : '登录请求无效。');
                         return;
                     case 'verified':
                         hide($('login-form'));
                         hide($('consent'));
-                        setText($('title'), 'Device authorized');
-                        setText($('subtitle'), 'You have successfully authorized this device. You may now close this window.');
-                        showSuccess('Device verified.');
+                        setText($('title'), '设备已授权');
+                        setText($('subtitle'), '您已成功授权此设备，现在可以关闭此窗口。');
+                        showSuccess('设备验证成功。');
                         return;
                     case 'denied':
                         hide($('login-form'));
                         hide($('consent'));
-                        setText($('title'), 'Access denied');
-                        setText($('subtitle'), 'The device was not authorized. You may now close this window.');
+                        setText($('title'), '访问被拒绝');
+                        setText($('subtitle'), '该设备未获得授权，现在可以关闭此窗口。');
                         clearAlert();
                         return;
                     case 'mfaRequired':
@@ -363,13 +365,13 @@
                         return;
                     case 'expired':
                         if (inMfa) leaveMfaMode();
-                        showError('Your password has expired. Change it in the account portal, then sign in again.');
+                        showError('您的密码已过期。请在账号门户中修改密码，然后重新登录。');
                         return;
                     case 'failure':
                         if (inMfa) leaveMfaMode();
                         showError(isDevice
-                            ? 'Invalid username or password, or the device code has expired. Please try again.'
-                            : 'Invalid username or password. Please try again.');
+                            ? '用户名或密码错误，或者设备代码已过期。请重试。'
+                            : '用户名或密码错误。请重试。');
                         return;
                     default:
                         console.log('Unknown login response type:', resp);
@@ -435,7 +437,7 @@
             function lookupDevice() {
                 var code = normalizeCode($('device-code').value);
                 if (!code) {
-                    showError('Please enter the device code.');
+                    showError('请输入设备代码。');
                     return;
                 }
                 $('device-code').value = code;
@@ -443,7 +445,7 @@
                 btn.disabled = true;
                 getJson('/api/auth/client?user_code=' + encodeURIComponent(code)).then(function (info) {
                     if (!info || typeof info !== 'object' || typeof info.error === 'string') {
-                        showError('The device code is invalid or has expired.');
+                        showError('设备代码无效或已过期。');
                         return;
                     }
                     deviceCode = code;
@@ -466,9 +468,9 @@
                 hide($('field-username'));
                 hide($('field-password'));
                 show($('field-device-code'));
-                setText($('submit-btn'), 'Continue');
-                setText($('title'), 'Authorize device');
-                setText($('subtitle'), 'Enter the code shown on your device.');
+                setText($('submit-btn'), '继续');
+                setText($('title'), '授权设备');
+                setText($('subtitle'), '请输入您设备上显示的代码。');
                 var prefillCode = params.get('code');
                 if (prefillCode) {
                     $('device-code').value = normalizeCode(prefillCode);
@@ -481,12 +483,12 @@
             function startAuthorization() {
                 hide($('login-form'));
                 if (!query) {
-                    setText($('title'), 'Sign in with an app');
-                    setText($('subtitle'), 'This page is opened automatically by your mail, calendar or contacts app to authorize access to your account.');
-                    showError('This sign-in page cannot be used directly. Please start the sign-in from your app instead.');
+                    setText($('title'), '使用应用登录');
+                    setText($('subtitle'), '此页面由您的邮件、日历或通讯录应用自动打开，用于授权访问您的账号。');
+                    showError('此登录页面无法直接使用。请从您的应用中发起登录。');
                     return;
                 }
-                setText($('subtitle'), 'Loading...');
+                setText($('subtitle'), '加载中…');
                 getJson('/api/auth/client?' + query).then(function (info) {
                     if (!info || typeof info !== 'object') throw new Error('malformed response');
                     if (typeof info.error === 'string') {
@@ -495,7 +497,7 @@
                         } else {
                             showFatal(typeof info.description === 'string' && info.description
                                 ? info.description
-                                : 'The sign-in request is invalid.');
+                                : '登录请求无效。');
                         }
                         return;
                     }
@@ -520,10 +522,10 @@
 
                 if (inMfa) {
                     var otp = ($('otp').value || '').trim();
-                    if (!otp) { showError('Please enter your one-time code.'); return; }
+                    if (!otp) { showError('请输入您的一次性验证码。'); return; }
                     if (!lastCreds) {
                         leaveMfaMode();
-                        showError('Session expired. Please sign in again.');
+                        showError('会话已过期，请重新登录。');
                         return;
                     }
                     postLogin(buildRequest(lastCreds, otp));
@@ -533,7 +535,7 @@
                 var username = ($('username').value || '').trim();
                 var password = $('password').value || '';
                 if (!username || !password) {
-                    showError('Please enter your username and password.');
+                    showError('请输入您的用户名和密码。');
                     return;
                 }
                 lastCreds = { account_name: username, account_secret: password };
@@ -560,35 +562,35 @@
 
     function rsvpPage() {
             var FALLBACK = {
-                invitation: 'Invitation',
-                updatedInvitation: 'Updated invitation',
-                cancelled: 'Cancelled',
-                description: 'Description',
-                attendees: 'Attendees',
-                organizer: 'Organizer',
-                location: 'Location',
-                conference: 'Conference',
-                when: 'When',
-                you: 'you',
-                yes: 'Yes',
-                maybe: 'Maybe',
-                no: 'No',
-                replyAs: 'Reply as $name',
-                note: 'Note to the organizer (optional)',
-                noteHint: 'Add a short message for the organizer.',
-                send: 'Send response',
-                update: 'Update response',
-                change: 'Change my response',
-                recorded: 'Your RSVP has been recorded',
-                notified: 'The organizer has been notified.',
-                accepted: 'Accepted',
-                tentative: 'Tentative',
-                declined: 'Declined',
-                showMore: 'Show more',
-                showLess: 'Show less',
-                failed: 'RSVP failed',
-                invalidLink: 'This RSVP link is not valid.',
-                error: 'Temporary server failure. If the problem persists, contact your administrator.'
+                invitation: '邀请',
+                updatedInvitation: '已更新的邀请',
+                cancelled: '已取消',
+                description: '描述',
+                attendees: '参与者',
+                organizer: '组织者',
+                location: '地点',
+                conference: '会议链接',
+                when: '时间',
+                you: '您',
+                yes: '参加',
+                maybe: '待定',
+                no: '不参加',
+                replyAs: '以 $name 的身份回复',
+                note: '给组织者的说明（可选）',
+                noteHint: '给组织者留言。',
+                send: '发送回复',
+                update: '更新回复',
+                change: '修改我的回复',
+                recorded: '您的回复已记录',
+                notified: '组织者已收到通知。',
+                accepted: '已接受',
+                tentative: '待定',
+                declined: '已拒绝',
+                showMore: '展开',
+                showLess: '收起',
+                failed: '回复失败',
+                invalidLink: '此回复链接无效。',
+                error: '服务器暂时故障。如果问题持续存在，请联系管理员。'
             };
 
             var PARTSTATS = ['accepted', 'tentative', 'declined'];
@@ -600,7 +602,7 @@
             function applyDirection(resp) {
                 if (!resp || !resp.language) return;
                 var root = document.documentElement;
-                root.lang = resp.language;
+                root.lang = UI_LOCALE;
                 root.dir = resp.dir === 'rtl' ? 'rtl' : 'ltr';
             }
 
@@ -624,7 +626,10 @@
                     method: 'POST',
                     credentials: 'omit',
                     cache: 'no-store',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept-Language': 'zh-CN'
+                    },
                     body: JSON.stringify(body)
                 }).then(function (res) {
                     return res.json().catch(function () {
@@ -717,7 +722,7 @@
                 var badge = $('recorded-badge');
                 badge.className = 'badge' + (partstat === 'accepted' ? '' : ' ' + partstat);
                 setText($('recorded-title'), t('recorded'));
-                setText($('recorded-detail'), t(partstat) + '. ' + t('notified'));
+                setText($('recorded-detail'), t(partstat) + '。' + t('notified'));
                 setText($('change'), t('change'));
                 hide($('respond'));
                 show($('recorded'));

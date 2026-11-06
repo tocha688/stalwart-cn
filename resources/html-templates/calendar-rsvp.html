@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="referrer" content="no-referrer">
     <meta name="color-scheme" content="light dark">
-    <title>Respond to invitation</title>
+    <title>回复邀请</title>
     <link rel="stylesheet" href="../ui-HASH.css">
     <script src="../ui-HASH.js"></script>
     <style>
@@ -264,7 +264,7 @@
 </head>
 
 <body data-page="rsvp">
-    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换主题">
         <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
@@ -285,8 +285,7 @@
                     display: none;
                 }
             </style>
-            <p class="noscript">This page needs JavaScript to load the invitation. Enable it, or respond from your
-                calendar application instead.</p>
+            <p class="noscript">此页面需要 JavaScript 才能加载邀请。请启用 JavaScript，或改用您的日历应用进行回复。</p>
         </noscript>
 
         <div id="view-loading" class="skeleton" aria-live="polite">
@@ -304,13 +303,13 @@
                     <line x1="12" y1="16" x2="12.01" y2="16" />
                 </svg>
             </div>
-            <h2 id="error-title" tabindex="-1">Something went wrong</h2>
+            <h2 id="error-title" tabindex="-1">出了点问题</h2>
             <p id="error-detail"></p>
         </div>
 
         <div id="view-event" class="stack" hidden>
             <div class="event-head">
-                <span class="eyebrow" id="kind">Invitation</span>
+                <span class="eyebrow" id="kind">邀请</span>
                 <h1 class="page-title" id="summary"></h1>
                 <p class="lead" id="byline" hidden></p>
             </div>
@@ -359,14 +358,14 @@
             </div>
 
             <div class="section" id="section-desc" hidden>
-                <h2 class="section-title" id="desc-title">Description</h2>
+                <h2 class="section-title" id="desc-title">描述</h2>
                 <div class="desc clamped" id="desc"></div>
                 <button type="button" class="linkish" id="desc-toggle" aria-expanded="false" aria-controls="desc"
-                    hidden>Show more</button>
+                    hidden>展开</button>
             </div>
 
             <div class="section" id="section-people" hidden>
-                <h2 class="section-title" id="people-title">Attendees</h2>
+                <h2 class="section-title" id="people-title">参与者</h2>
                 <div class="people" id="people"></div>
                 <button type="button" class="linkish" id="people-toggle" aria-expanded="false" aria-controls="people"
                     hidden></button>
@@ -381,7 +380,7 @@
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <polyline points="20 6 9 17 4 12" />
                         </svg>
-                        <span id="label-accepted">Yes</span>
+                        <span id="label-accepted">参加</span>
                     </button>
                     <button type="button" class="choice" data-value="tentative" role="radio" aria-checked="false"
                         tabindex="-1">
@@ -391,7 +390,7 @@
                             <line x1="12" y1="17" x2="12.01" y2="17" />
                             <circle cx="12" cy="12" r="10" />
                         </svg>
-                        <span id="label-tentative">Maybe</span>
+                        <span id="label-tentative">待定</span>
                     </button>
                     <button type="button" class="choice" data-value="declined" role="radio" aria-checked="false"
                         tabindex="-1">
@@ -400,17 +399,17 @@
                             <line x1="18" y1="6" x2="6" y2="18" />
                             <line x1="6" y1="6" x2="18" y2="18" />
                         </svg>
-                        <span id="label-declined">No</span>
+                        <span id="label-declined">不参加</span>
                     </button>
                 </div>
 
                 <div id="note-wrap" hidden>
                     <div class="note-label">
-                        <label class="label" for="note" id="note-label">Note to the organizer (optional)</label>
+                        <label class="label" for="note" id="note-label">给组织者的说明（可选）</label>
                         <span id="note-count"></span>
                     </div>
                     <textarea class="textarea" id="note" maxlength="512" rows="3"
-                        placeholder="Running ten minutes late, start without me."></textarea>
+                        placeholder="我会晚到十分钟，请先开始。"></textarea>
                 </div>
 
                 <div class="alert" id="alert" hidden aria-live="polite">
@@ -423,7 +422,7 @@
                     <span id="alert-msg"></span>
                 </div>
 
-                <button type="button" class="btn" id="send" disabled>Send response</button>
+                <button type="button" class="btn" id="send" disabled>发送回复</button>
             </div>
 
             <div class="panel" id="recorded" hidden aria-live="polite">
@@ -434,9 +433,9 @@
                             <polyline points="20 6 9 17 4 12" />
                         </svg>
                     </div>
-                    <h2 id="recorded-title" tabindex="-1">Your response has been recorded</h2>
+                    <h2 id="recorded-title" tabindex="-1">您的回复已记录</h2>
                     <p id="recorded-detail"></p>
-                    <button type="button" class="linkish" id="change">Change my response</button>
+                    <button type="button" class="linkish" id="change">修改我的回复</button>
                 </div>
             </div>
         </div>
